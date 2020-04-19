@@ -9,6 +9,13 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @ObservedObject private var viewModel: ContentViewModel
+
+    init(viewModel: ContentViewModel = ContentViewModel()) {
+        self.viewModel = viewModel
+    }
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -19,7 +26,8 @@ struct ContentView: View {
                         .fontWeight(.bold)
                     HStack{
                         Image(systemName: "mappin.circle.fill")
-                        Text("Kuala Lumpur, Malaysia")
+                        Text(viewModel.locality)
+                            
                             .fontWeight(.medium)
                     }
                     .font(.headline)
