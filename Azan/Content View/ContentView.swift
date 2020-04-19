@@ -27,7 +27,6 @@ struct ContentView: View {
                         HStack{
                             Image(systemName: "mappin.circle.fill")
                             Text(viewModel.locality)
-
                                 .fontWeight(.medium)
                         }
                         .font(.headline)
@@ -43,6 +42,11 @@ struct ContentView: View {
                 }
             }.listStyle(GroupedListStyle()).environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle("Today")
+                .navigationBarItems(trailing:
+                    NavigationLink(destination: EmptyView()) {
+                        Image(systemName: "gear")
+                    }
+            )
         }
     }
 }
