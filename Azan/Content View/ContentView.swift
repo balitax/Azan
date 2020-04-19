@@ -18,57 +18,35 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(alignment: .leading) {
-                    Spacer()
-                    Text("15 minutes left until Maghrib")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                    HStack{
-                        Image(systemName: "mappin.circle.fill")
-                        Text(viewModel.locality)
-                            
-                            .fontWeight(.medium)
+            List {
+                Section {
+                    VStack(alignment: .leading) {
+                        Text("15 minutes left until Maghrib")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                        HStack{
+                            Image(systemName: "mappin.circle.fill")
+                            Text(viewModel.locality)
+                                .fontWeight(.medium)
+                        }
+                        .font(.headline)
                     }
-                    .font(.headline)
+                .padding()
                 }
-                .frame(height: 200, alignment: .leading)
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text("Subuh")
-                        Spacer()
-                        Text(viewModel.fajr)
-                        Image(systemName: "bell.fill")
-                    }
-                    HStack {
-                        Text("Zuhur")
-                        Spacer()
-                        Text(viewModel.dhuhr)
-                        Image(systemName: "bell.slash.fill")
-                    }
-                    HStack {
-                        Text("Asar")
-                        Spacer()
-                        Text(viewModel.asr)
-                        Image(systemName: "bell.slash.fill")
-                    }
-                    HStack {
-                        Text("Maghrib")
-                        Spacer()
-                        Text(viewModel.maghrib)
-                        Image(systemName: "bell.slash.fill")
-                    }
-                    HStack {
-                        Text("Isyak")
-                        Spacer()
-                        Text(viewModel.isha)
-                        Image(systemName: "bell.slash.fill")
-                    }
+                Section {
+                    SolatView(title: "Subuh", time: viewModel.fajr)
+                    SolatView(title: "Zuhur", time: viewModel.dhuhr)
+                    SolatView(title: "Asar", time: viewModel.asr)
+                    SolatView(title: "Maghrib", time: viewModel.maghrib)
+                    SolatView(title: "Isyak", time: viewModel.isha)
                 }
-                .padding(.horizontal, 50.0)
-                .padding(.top, 20)
-            }
+            }.listStyle(GroupedListStyle()).environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle("Today")
+                .navigationBarItems(trailing:
+                    NavigationLink(destination: EmptyView()) {
+                        Image(systemName: "gear")
+                    }
+            )
         }
     }
 }
