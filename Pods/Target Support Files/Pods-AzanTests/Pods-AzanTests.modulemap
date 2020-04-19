@@ -1,0 +1,6 @@
+framework module Pods_AzanTests {
+  umbrella header "Pods-AzanTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
