@@ -37,31 +37,31 @@ struct ContentView: View {
                     HStack {
                         Text("Subuh")
                         Spacer()
-                        Text("5:50 AM")
+                        Text(viewModel.fajr)
                         Image(systemName: "bell.fill")
                     }
                     HStack {
                         Text("Zuhur")
                         Spacer()
-                        Text("1:20 PM")
+                        Text(viewModel.dhuhr)
                         Image(systemName: "bell.slash.fill")
                     }
                     HStack {
                         Text("Asar")
                         Spacer()
-                        Text("4:30 PM")
+                        Text(viewModel.asr)
                         Image(systemName: "bell.slash.fill")
                     }
                     HStack {
                         Text("Maghrib")
                         Spacer()
-                        Text("7:30 PM")
+                        Text(viewModel.maghrib)
                         Image(systemName: "bell.slash.fill")
                     }
                     HStack {
                         Text("Isyak")
                         Spacer()
-                        Text("8:30 PM")
+                        Text(viewModel.isha)
                         Image(systemName: "bell.slash.fill")
                     }
                 }
