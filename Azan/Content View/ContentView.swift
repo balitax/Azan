@@ -12,6 +12,12 @@ struct ContentView: View {
 
     @ObservedObject private var viewModel: ContentViewModel
 
+    @State var nextPrayer: String = ""
+
+    @State var currentTime: String = ""
+
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     init(viewModel: ContentViewModel = ContentViewModel()) {
         self.viewModel = viewModel
     }
@@ -20,10 +26,20 @@ struct ContentView: View {
         NavigationView {
             List {
                 Section {
-                    VStack(alignment: .leading) {
-                        Text("15 minutes left until Maghrib")
+                    VStack(alignment: .leading, spacing: 15) {
+                        Text(nextPrayer)
                             .font(.largeTitle)
                             .fontWeight(.bold)
+                            .onReceive(timer) { output in
+                                self.nextPrayer = "\(self.viewModel.relativeTimeNextPrayer) left until \(self.viewModel.nextPrayer)"
+                        }
+                        Text(currentTime)
+                            .font(Font.system(.headline, design: .monospaced).monospacedDigit())
+                            .foregroundColor(.secondary)
+                            .fontWeight(.medium)
+                            .onReceive(timer) { output in
+                                self.currentTime = self.viewModel.currentTime
+                        }
                         HStack{
                             Image(systemName: "mappin.circle.fill")
                             Text(viewModel.locality)
