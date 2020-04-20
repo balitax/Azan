@@ -33,6 +33,12 @@ class SolatWorker {
         return prayerTimes?.isha
     }
 
+    var nextPrayer: String? {
+        return prayerTimes?.nextPrayer()?.name
+    }
+
+    var countdownForNextPrayer: Date?
+
     init(latitude: Double, longitude: Double, date: Date) {
         let coordinates = Coordinates(latitude: latitude, longitude: longitude)
         let cal = Calendar(identifier: Calendar.Identifier.gregorian)
@@ -40,5 +46,26 @@ class SolatWorker {
         var params = CalculationMethod.moonsightingCommittee.params
         params.madhab = .shafi
         self.prayerTimes = PrayerTimes(coordinates: coordinates, date: dateComponents, calculationParameters: params)
+        guard let next = self.prayerTimes?.nextPrayer() else { return }
+        self.countdownForNextPrayer = prayerTimes?.time(for: next)
+    }
+}
+
+extension Prayer {
+    var name: String {
+        switch self {
+        case .fajr:
+            return "Subuh"
+        case .dhuhr:
+            return "Zuhur"
+        case .asr:
+            return "Asr"
+        case .maghrib:
+            return "Maghrib"
+        case .isha:
+            return "Isha"
+        case .sunrise:
+            return "Sunrise"
+        }
     }
 }

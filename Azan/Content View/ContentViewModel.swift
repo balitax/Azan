@@ -21,6 +21,12 @@ class ContentViewModel: ObservableObject {
         return formatter
     }()
 
+    private let currentTimeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm:ss a"
+        return formatter
+    }()
+
     @Published private(set) var placemark: CLPlacemark? {
         didSet {
             self.locality = placemark?.locality ?? ""
@@ -33,6 +39,20 @@ class ContentViewModel: ObservableObject {
     @Published private(set) var asr: String = ""
     @Published private(set) var maghrib: String = ""
     @Published private(set) var isha: String = ""
+
+    var nextPrayer: String {
+        return self.solatWorker?.nextPrayer ?? ""
+    }
+
+    var relativeTimeNextPrayer: String {
+        guard let countdown = self.solatWorker?.countdownForNextPrayer else { return "" }
+        let dateComponentsFormatter = DateComponentsFormatter()
+        return dateComponentsFormatter.difference(from: Date(), to: countdown) ?? ""
+    }
+
+    var currentTime: String {
+        return currentTimeFormatter.string(from: Date())
+    }
 
     var subscriptions = Set<AnyCancellable>()
 
@@ -71,5 +91,14 @@ class ContentViewModel: ObservableObject {
     private func convert(date: Date?) -> String {
         guard let date = date else { return "" }
         return timeFormatter.string(from: date)
+    }
+}
+
+extension DateComponentsFormatter {
+    func difference(from fromDate: Date, to toDate: Date) -> String? {
+        self.allowedUnits = [.hour, .minute, .second]
+        self.maximumUnitCount = 1
+        self.unitsStyle = .full
+        return self.string(from: fromDate, to: toDate)
     }
 }
