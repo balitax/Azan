@@ -10,6 +10,7 @@
 		26BD9937CE64622C365E360C /* Pods_Azan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D53C2121C8AEBC8FE594EB /* Pods_Azan.framework */; };
 		4DBF795AA2D8BC266FAF735B /* Pods_AzanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2407EF5E6E150C61D7020B0B /* Pods_AzanTests.framework */; };
 		986DD5D32452F3EB000DDE76 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986DD5D22452F3EB000DDE76 /* SettingsView.swift */; };
+		986DD5D524532D6C000DDE76 /* AsarCalculationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986DD5D424532D6C000DDE76 /* AsarCalculationMethod.swift */; };
 		98B5DD4B244B342100C74586 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5DD4A244B342100C74586 /* AppDelegate.swift */; };
 		98B5DD4D244B342100C74586 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5DD4C244B342100C74586 /* SceneDelegate.swift */; };
 		98B5DD4F244B342100C74586 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5DD4E244B342100C74586 /* ContentView.swift */; };
@@ -38,6 +39,7 @@
 		55C0DA06B080AB9D610BCA15 /* Pods-Azan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Azan.release.xcconfig"; path = "Target Support Files/Pods-Azan/Pods-Azan.release.xcconfig"; sourceTree = "<group>"; };
 		720E90CFD16E3987570542E5 /* Pods-AzanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AzanTests.debug.xcconfig"; path = "Target Support Files/Pods-AzanTests/Pods-AzanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		986DD5D22452F3EB000DDE76 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		986DD5D424532D6C000DDE76 /* AsarCalculationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsarCalculationMethod.swift; sourceTree = "<group>"; };
 		98B5DD47244B342100C74586 /* Azan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Azan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B5DD4A244B342100C74586 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B5DD4C244B342100C74586 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				98B5DD55244B342300C74586 /* LaunchScreen.storyboard */,
 				98B5DD58244B342300C74586 /* Info.plist */,
 				98B5DD52244B342300C74586 /* Preview Content */,
+				986DD5D424532D6C000DDE76 /* AsarCalculationMethod.swift */,
 			);
 			path = Azan;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				986DD5D32452F3EB000DDE76 /* SettingsView.swift in Sources */,
 				98B5DD6D244B4E7C00C74586 /* LocationWorker.swift in Sources */,
 				98BB0AB0244C33A40091F0CF /* SolatView.swift in Sources */,
+				986DD5D524532D6C000DDE76 /* AsarCalculationMethod.swift in Sources */,
 				98B5DD4D244B342100C74586 /* SceneDelegate.swift in Sources */,
 				98BB0AAE244C146F0091F0CF /* SolatWorker.swift in Sources */,
 				98B5DD4F244B342100C74586 /* ContentView.swift in Sources */,
