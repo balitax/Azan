@@ -59,7 +59,7 @@ struct ContentView: View {
             }.listStyle(GroupedListStyle()).environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle("Today")
                 .navigationBarItems(trailing:
-                    NavigationLink(destination: EmptyView()) {
+                    NavigationLink(destination: SettingsView()) {
                         Image(systemName: "gear")
                     }
             )
