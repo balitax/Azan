@@ -1,16 +1,20 @@
 PODS:
   - Adhan (1.1.0)
+  - lottie-ios (3.1.6)
 
 DEPENDENCIES:
   - Adhan (= 1.1.0)
+  - lottie-ios
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Adhan
+    - lottie-ios
 
 SPEC CHECKSUMS:
   Adhan: 3484020e8b2e7ca6f9f27317307416611ce7d848
+  lottie-ios: 85ce835dd8c53e02509f20729fc7d6a4e6645a0a
 
-PODFILE CHECKSUM: 79d9561e05b87790b7739b4bc2aa9a4cfe1d03ce
+PODFILE CHECKSUM: 2f9403c2c6d418ba0c3a7cebfd8d032078c7afab
 
 COCOAPODS: 1.7.5

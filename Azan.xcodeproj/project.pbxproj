@@ -28,6 +28,8 @@
 		98F866AE2472E58400780DB9 /* LocationManagerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F866AD2472E58400780DB9 /* LocationManagerPublisher.swift */; };
 		98F866B12472E5FA00780DB9 /* ParentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F866B02472E5FA00780DB9 /* ParentScene.swift */; };
 		98F866B52472E61500780DB9 /* ParentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F866B42472E61500780DB9 /* ParentViewModel.swift */; };
+		98DBB188247198DF00E150F6 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DBB187247198DF00E150F6 /* AnimationView.swift */; };
+		98DBB18A24719E6700E150F6 /* 10581-location.json in Resources */ = {isa = PBXBuildFile; fileRef = 98DBB18924719E6700E150F6 /* 10581-location.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		98F866AD2472E58400780DB9 /* LocationManagerPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerPublisher.swift; sourceTree = "<group>"; };
 		98F866B02472E5FA00780DB9 /* ParentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentScene.swift; sourceTree = "<group>"; };
 		98F866B42472E61500780DB9 /* ParentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewModel.swift; sourceTree = "<group>"; };
+		98DBB187247198DF00E150F6 /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+		98DBB18924719E6700E150F6 /* 10581-location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "10581-location.json"; sourceTree = "<group>"; };
 		A0E13C8CA8053EE9991DC6CB /* Pods-AzanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AzanTests.release.xcconfig"; path = "Target Support Files/Pods-AzanTests/Pods-AzanTests.release.xcconfig"; sourceTree = "<group>"; };
 		D045BE846BE5EC20258B1C31 /* Pods-Azan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Azan.debug.xcconfig"; path = "Target Support Files/Pods-Azan/Pods-Azan.debug.xcconfig"; sourceTree = "<group>"; };
 		D9D53C2121C8AEBC8FE594EB /* Pods_Azan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Azan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +157,7 @@
 				98BB0AAD244C146F0091F0CF /* SolatWorker.swift */,
 				98BB0AAF244C33A40091F0CF /* SolatView.swift */,
 				98B5DD50244B342300C74586 /* Assets.xcassets */,
+				98DBB18924719E6700E150F6 /* 10581-location.json */,
 				98B5DD55244B342300C74586 /* LaunchScreen.storyboard */,
 				98B5DD58244B342300C74586 /* Info.plist */,
 				98B5DD52244B342300C74586 /* Preview Content */,
@@ -191,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				98DBB18524718EAB00E150F6 /* LocationPermissionScene.swift */,
+				98DBB187247198DF00E150F6 /* AnimationView.swift */,
 			);
 			path = "Location Permission";
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98DBB18A24719E6700E150F6 /* 10581-location.json in Resources */,
 				98B5DD57244B342300C74586 /* LaunchScreen.storyboard in Resources */,
 				98B5DD54244B342300C74586 /* Preview Assets.xcassets in Resources */,
 				98B5DD51244B342300C74586 /* Assets.xcassets in Resources */,
@@ -388,6 +395,7 @@
 				98733F692469264B00B35C83 /* CalculationMethodView.swift in Sources */,
 				98F866AE2472E58400780DB9 /* LocationManagerPublisher.swift in Sources */,
 				98B5DD6D244B4E7C00C74586 /* LocationWorker.swift in Sources */,
+				98DBB188247198DF00E150F6 /* AnimationView.swift in Sources */,
 				98BB0AB0244C33A40091F0CF /* SolatView.swift in Sources */,
 				986DD5D524532D6C000DDE76 /* AsarCalculationMethod.swift in Sources */,
 				98F866B12472E5FA00780DB9 /* ParentScene.swift in Sources */,

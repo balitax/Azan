@@ -3,6 +3,9 @@ import SwiftUI
 struct LocationPermissionScene: View {
     var body: some View {
         VStack {
+            AnimationView(filename: "10581-location")
+                .frame(height: 350)
+                .padding(.bottom, 40)
             Text("Turn on your location")
                 .font(.largeTitle)
                 .fontWeight(.black)
@@ -28,6 +31,7 @@ struct LocationPermissionScene: View {
                         .stroke(Color.accentColor, lineWidth: 3)
                 )
             })
+                .padding(.top, 40)
         }
     }
 }
