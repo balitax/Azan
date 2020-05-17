@@ -24,6 +24,7 @@
 		98B5DD6F244B557F00C74586 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5DD6E244B557F00C74586 /* ContentViewModel.swift */; };
 		98BB0AAE244C146F0091F0CF /* SolatWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BB0AAD244C146F0091F0CF /* SolatWorker.swift */; };
 		98BB0AB0244C33A40091F0CF /* SolatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BB0AAF244C33A40091F0CF /* SolatView.swift */; };
+		98DBB18624718EAB00E150F6 /* LocationPermissionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DBB18524718EAB00E150F6 /* LocationPermissionScene.swift */; };
 		98F866AE2472E58400780DB9 /* LocationManagerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F866AD2472E58400780DB9 /* LocationManagerPublisher.swift */; };
 		98F866B12472E5FA00780DB9 /* ParentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F866B02472E5FA00780DB9 /* ParentScene.swift */; };
 		98F866B52472E61500780DB9 /* ParentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F866B42472E61500780DB9 /* ParentViewModel.swift */; };
@@ -62,6 +63,7 @@
 		98B5DD6E244B557F00C74586 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		98BB0AAD244C146F0091F0CF /* SolatWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolatWorker.swift; sourceTree = "<group>"; };
 		98BB0AAF244C33A40091F0CF /* SolatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolatView.swift; sourceTree = "<group>"; };
+		98DBB18524718EAB00E150F6 /* LocationPermissionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionScene.swift; sourceTree = "<group>"; };
 		98F866AD2472E58400780DB9 /* LocationManagerPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerPublisher.swift; sourceTree = "<group>"; };
 		98F866B02472E5FA00780DB9 /* ParentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentScene.swift; sourceTree = "<group>"; };
 		98F866B42472E61500780DB9 /* ParentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewModel.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 				98F866AF2472E5D300780DB9 /* Parent Scene */,
 				98B5DD4A244B342100C74586 /* AppDelegate.swift */,
 				98B5DD4C244B342100C74586 /* SceneDelegate.swift */,
+				98DBB18424718E9100E150F6 /* Location Permission */,
 				98B5DD70244B559800C74586 /* Content View */,
 				986DD5D12452F398000DDE76 /* Settings View */,
 				98733F672469262F00B35C83 /* Prayer Calculation Method View */,
@@ -182,6 +185,14 @@
 				98B5DD4E244B342100C74586 /* ContentView.swift */,
 			);
 			path = "Content View";
+			sourceTree = "<group>";
+		};
+		98DBB18424718E9100E150F6 /* Location Permission */ = {
+			isa = PBXGroup;
+			children = (
+				98DBB18524718EAB00E150F6 /* LocationPermissionScene.swift */,
+			);
+			path = "Location Permission";
 			sourceTree = "<group>";
 		};
 		98F866AF2472E5D300780DB9 /* Parent Scene */ = {
@@ -382,6 +393,7 @@
 				98F866B12472E5FA00780DB9 /* ParentScene.swift in Sources */,
 				98B5DD4D244B342100C74586 /* SceneDelegate.swift in Sources */,
 				98733F6624691F4400B35C83 /* HeaderView.swift in Sources */,
+				98DBB18624718EAB00E150F6 /* LocationPermissionScene.swift in Sources */,
 				98BB0AAE244C146F0091F0CF /* SolatWorker.swift in Sources */,
 				98B5DD4F244B342100C74586 /* ContentView.swift in Sources */,
 				98F866B52472E61500780DB9 /* ParentViewModel.swift in Sources */,
