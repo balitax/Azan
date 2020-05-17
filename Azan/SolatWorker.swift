@@ -43,7 +43,7 @@ class SolatWorker {
         let coordinates = Coordinates(latitude: latitude, longitude: longitude)
         let cal = Calendar(identifier: Calendar.Identifier.gregorian)
         let dateComponents = cal.dateComponents([.year, .month, .day], from: date)
-        var params = CalculationMethod.moonsightingCommittee.params
+        var params = Adhan.CalculationMethod.moonsightingCommittee.params
         params.madhab = .shafi
         self.prayerTimes = PrayerTimes(coordinates: coordinates, date: dateComponents, calculationParameters: params)
         guard let next = self.prayerTimes?.nextPrayer() else { return }
