@@ -13,8 +13,8 @@ struct ContentView: View {
     @ObservedObject private var viewModel: ContentViewModel
 
     @State var nextPrayer: String = ""
-
     @State var currentTime: String = ""
+    @State var isSettingsPresented = false
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -49,18 +49,31 @@ struct ContentView: View {
                     }
                 .padding()
                 }
-                Section {
-                    SolatView(title: "Subuh", time: viewModel.fajr)
-                    SolatView(title: "Zuhur", time: viewModel.dhuhr)
-                    SolatView(title: "Asar", time: viewModel.asr)
-                    SolatView(title: "Maghrib", time: viewModel.maghrib)
-                    SolatView(title: "Isyak", time: viewModel.isha)
+                Section(header:
+                    Text("Prayer Times")
+                        .fontWeight(.bold)
+                        .font(.system(size: 21))
+                        .foregroundColor(.primary)
+                        .padding(.leading, -15)
+                        .padding(.bottom, 5)
+                    ) {
+                    SolatView(title: "Subuh", time: viewModel.fajr, icon: "sunrise.fill")
+                    SolatView(title: "Zuhur", time: viewModel.dhuhr, icon: "sun.max.fill")
+                    SolatView(title: "Asar", time: viewModel.asr, icon: "sun.min.fill")
+                    SolatView(title: "Maghrib", time: viewModel.maghrib, icon: "sunset.fill")
+                    SolatView(title: "Isyak", time: viewModel.isha, icon: "moon.stars.fill")
                 }
             }.listStyle(GroupedListStyle()).environment(\.horizontalSizeClass, .regular)
             .navigationBarTitle("Today")
                 .navigationBarItems(trailing:
-                    NavigationLink(destination: SettingsView()) {
-                        Image(systemName: "gear")
+                    Button(action: {
+                        self.isSettingsPresented = true
+                    }, label: {
+                        Image(systemName: "slider.horizontal.3")
+                            .accentColor(.primary)
+                    })
+                    .sheet(isPresented: $isSettingsPresented) {
+                        SettingsView()
                     }
             )
         }

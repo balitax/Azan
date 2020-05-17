@@ -16,12 +16,13 @@ struct SolatView: View {
         HStack {
             if !icon.isEmpty {
                 Image(systemName: icon)
+                    .padding(.trailing)
             }
             Text(title.uppercased())
-                .fontWeight(.semibold)
+                .fontWeight(.bold)
             Spacer()
             Text(time)
-                .fontWeight(.semibold)
+                .fontWeight(.bold)
         }
         .padding()
     }

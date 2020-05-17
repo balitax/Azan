@@ -2,25 +2,47 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        List {
-            Section(header: Text("General")) {
-                Text("Prayer Calculation Method")
-                Text("Language")
-                Text("Location")
+        NavigationView {
+            List {
+                Section(header: HeaderView("General")) {
+                    NavigationLink(destination: CalculationMethodView()) {
+                        Text("Prayer Calculation Method")
+                        .fontWeight(.medium)
+                        .padding()
+                    }
+                    NavigationLink(destination: EmptyView()) {
+                        Text("Language")
+                        .fontWeight(.medium)
+                        .padding()
+                    }
+                    NavigationLink(destination: EmptyView()) {
+                        Text("Location")
+                        .fontWeight(.medium)
+                        .padding()
+                    }
+                }
+                Section(header: HeaderView("Contact")) {
+                    Text("Email me at mfmokhtar@gmail.com")
+                        .fontWeight(.medium)
+                        .padding()
+                    Text("Tweet to me at @faizmokh")
+                        .fontWeight(.medium)
+                        .padding()
+                }
+                Section(header: HeaderView("About"),
+                        footer: Text("V0.1")) {
+                    Text("About the app")
+                        .fontWeight(.medium)
+                        .padding()
+                    Text("Acknowledgements")
+                        .fontWeight(.medium)
+                        .padding()
+                }
             }
-            Section(header: Text("Contact")) {
-                Text("Email me at mfmokhtar@gmail.com")
-                Text("Tweet to me at @faizmokh")
-            }
-            Section(header: Text("About"),
-                    footer: Text("V0.1")) {
-                Text("About the app")
-                Text("Acknowledgements")
-            }
+            .listStyle(GroupedListStyle())
+            .environment(\.horizontalSizeClass, .regular)
+            .navigationBarTitle("Settings")
         }
-        .listStyle(GroupedListStyle())
-        .environment(\.horizontalSizeClass, .regular)
-        .navigationBarTitle("Settings")
     }
 }
 
