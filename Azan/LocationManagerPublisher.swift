@@ -20,7 +20,7 @@ final class CLLocationManagerPublisher: NSObject, CLLocationManagerDelegate, Pub
     typealias Output = Data
     typealias Failure = Error
 
-    private weak var manager: CLLocationManager?
+    private var manager: CLLocationManager?
 
     private var subscriptions: [CLLocationManagerSubscription]
 
