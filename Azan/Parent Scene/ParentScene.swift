@@ -14,7 +14,7 @@ struct ParentScene: View {
             if viewModel.isLocationEnabled {
                 ContentView()
             } else {
-                EmptyView()
+                LocationPermissionScene()
             }
         }
         .onAppear(perform: viewModel.requestUserPermission)

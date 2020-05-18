@@ -7,6 +7,7 @@ target 'Azan' do
 
   # Pods for Azan
   pod 'Adhan', '1.1.0'
+  pod 'lottie-ios'
 
   target 'AzanTests' do
     inherit! :search_paths
