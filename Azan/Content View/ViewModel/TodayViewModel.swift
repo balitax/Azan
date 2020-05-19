@@ -1,16 +1,8 @@
-//
-//  ContentViewModel.swift
-//  Azan
-//
-//  Created by Faiz Mokhtar on 18/04/2020.
-//  Copyright © 2020 Faiz Mokhtar. All rights reserved.
-//
-
 import Foundation
 import Combine
 import CoreLocation
 
-class ContentViewModel: ObservableObject {
+class TodayViewModel: ObservableObject {
 
     private let locationWorker: LocationWorker
     private var solatWorker: SolatWorker?
@@ -54,9 +46,24 @@ class ContentViewModel: ObservableObject {
         return currentTimeFormatter.string(from: Date())
     }
 
+    var currentHijriDate: String {
+        let calendar = Calendar(identifier: .islamic)
+        let formatter = DateFormatter()
+        formatter.dateStyle  = .long
+        formatter.timeStyle = .none
+        formatter.calendar = calendar
+
+        return formatter.string(from: currentDate)
+    }
+
     var subscriptions = Set<AnyCancellable>()
 
-    init() {
+    private let currentDate: Date
+
+    // MARK: - Inits
+
+    init(currentDate: Date = Date()) {
+        self.currentDate = currentDate
         self.locationWorker = LocationWorker()
         locationWorker.subject.sink(receiveCompletion: { completion in
             switch completion {
