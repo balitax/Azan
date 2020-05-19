@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		26BD9937CE64622C365E360C /* Pods_Azan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9D53C2121C8AEBC8FE594EB /* Pods_Azan.framework */; };
 		4DBF795AA2D8BC266FAF735B /* Pods_AzanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2407EF5E6E150C61D7020B0B /* Pods_AzanTests.framework */; };
+		983FFDD92474282A00011FA6 /* TodayViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983FFDD82474282A00011FA6 /* TodayViewModelTests.swift */; };
 		986DD5D32452F3EB000DDE76 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986DD5D22452F3EB000DDE76 /* SettingsView.swift */; };
 		986DD5D524532D6C000DDE76 /* AsarCalculationMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986DD5D424532D6C000DDE76 /* AsarCalculationMethod.swift */; };
 		98733F6624691F4400B35C83 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98733F6524691F4400B35C83 /* HeaderView.swift */; };
@@ -46,6 +47,7 @@
 		2407EF5E6E150C61D7020B0B /* Pods_AzanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AzanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C0DA06B080AB9D610BCA15 /* Pods-Azan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Azan.release.xcconfig"; path = "Target Support Files/Pods-Azan/Pods-Azan.release.xcconfig"; sourceTree = "<group>"; };
 		720E90CFD16E3987570542E5 /* Pods-AzanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AzanTests.debug.xcconfig"; path = "Target Support Files/Pods-AzanTests/Pods-AzanTests.debug.xcconfig"; sourceTree = "<group>"; };
+		983FFDD82474282A00011FA6 /* TodayViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModelTests.swift; sourceTree = "<group>"; };
 		986DD5D22452F3EB000DDE76 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		986DD5D424532D6C000DDE76 /* AsarCalculationMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsarCalculationMethod.swift; sourceTree = "<group>"; };
 		98733F6524691F4400B35C83 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,15 @@
 				2407EF5E6E150C61D7020B0B /* Pods_AzanTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		983FFDDA24742D8800011FA6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				98B5DD6E244B557F00C74586 /* TodayViewModel.swift */,
+				983FFDD82474282A00011FA6 /* TodayViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		986DD5D12452F398000DDE76 /* Settings View */ = {
@@ -186,7 +197,7 @@
 		98B5DD70244B559800C74586 /* Content View */ = {
 			isa = PBXGroup;
 			children = (
-				98B5DD6E244B557F00C74586 /* TodayViewModel.swift */,
+				983FFDDA24742D8800011FA6 /* ViewModel */,
 				98B5DD4E244B342100C74586 /* TodayScene.swift */,
 			);
 			path = "Content View";
@@ -413,6 +424,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				983FFDD92474282A00011FA6 /* TodayViewModelTests.swift in Sources */,
 				98B5DD62244B342300C74586 /* AzanTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

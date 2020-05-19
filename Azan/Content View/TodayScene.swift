@@ -17,7 +17,21 @@ struct TodayScene: View {
     var body: some View {
         NavigationView {
             List {
-                Section {
+                Section(header:
+                    VStack(alignment: .leading) {
+                        Text(viewModel.currentHijriDate)
+                            .fontWeight(.medium)
+                            .font(.headline)
+                            .foregroundColor(.primary)
+                            .padding(.vertical, 20)
+                        Text("Next Prayer")
+                            .fontWeight(.bold)
+                            .font(.system(size: 21))
+                            .foregroundColor(.primary)
+                            .padding(.bottom, 5)
+                    }
+                    .padding(.leading, -15)
+                    ) {
                     VStack(alignment: .leading, spacing: 15) {
                         Text(nextPrayer)
                             .font(.largeTitle)

@@ -46,9 +46,24 @@ class TodayViewModel: ObservableObject {
         return currentTimeFormatter.string(from: Date())
     }
 
+    var currentHijriDate: String {
+        let calendar = Calendar(identifier: .islamic)
+        let formatter = DateFormatter()
+        formatter.dateStyle  = .long
+        formatter.timeStyle = .none
+        formatter.calendar = calendar
+
+        return formatter.string(from: currentDate)
+    }
+
     var subscriptions = Set<AnyCancellable>()
 
-    init() {
+    private let currentDate: Date
+
+    // MARK: - Inits
+
+    init(currentDate: Date = Date()) {
+        self.currentDate = currentDate
         self.locationWorker = LocationWorker()
         locationWorker.subject.sink(receiveCompletion: { completion in
             switch completion {
