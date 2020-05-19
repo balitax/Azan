@@ -12,7 +12,7 @@ struct ParentScene: View {
     var body: some View {
         VStack {
             if viewModel.isLocationEnabled {
-                ContentView()
+                TodayScene()
             } else {
                 LocationPermissionScene()
             }

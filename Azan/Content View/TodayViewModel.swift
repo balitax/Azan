@@ -1,16 +1,8 @@
-//
-//  ContentViewModel.swift
-//  Azan
-//
-//  Created by Faiz Mokhtar on 18/04/2020.
-//  Copyright © 2020 Faiz Mokhtar. All rights reserved.
-//
-
 import Foundation
 import Combine
 import CoreLocation
 
-class ContentViewModel: ObservableObject {
+class TodayViewModel: ObservableObject {
 
     private let locationWorker: LocationWorker
     private var solatWorker: SolatWorker?

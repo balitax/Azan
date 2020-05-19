@@ -1,16 +1,8 @@
-//
-//  ContentView.swift
-//  Azan
-//
-//  Created by Faiz Mokhtar on 18/04/2020.
-//  Copyright © 2020 Faiz Mokhtar. All rights reserved.
-//
-
 import SwiftUI
 
-struct ContentView: View {
+struct TodayScene: View {
 
-    @ObservedObject private var viewModel: ContentViewModel
+    @ObservedObject private var viewModel: TodayViewModel
 
     @State var nextPrayer: String = ""
     @State var currentTime: String = ""
@@ -18,7 +10,7 @@ struct ContentView: View {
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
-    init(viewModel: ContentViewModel = ContentViewModel()) {
+    init(viewModel: TodayViewModel = TodayViewModel()) {
         self.viewModel = viewModel
     }
 
@@ -82,6 +74,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TodayScene()
     }
 }

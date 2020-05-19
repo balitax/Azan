@@ -15,21 +15,21 @@
 		98733F692469264B00B35C83 /* CalculationMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98733F682469264B00B35C83 /* CalculationMethodView.swift */; };
 		98B5DD4B244B342100C74586 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5DD4A244B342100C74586 /* AppDelegate.swift */; };
 		98B5DD4D244B342100C74586 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5DD4C244B342100C74586 /* SceneDelegate.swift */; };
-		98B5DD4F244B342100C74586 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5DD4E244B342100C74586 /* ContentView.swift */; };
+		98B5DD4F244B342100C74586 /* TodayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5DD4E244B342100C74586 /* TodayScene.swift */; };
 		98B5DD51244B342300C74586 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B5DD50244B342300C74586 /* Assets.xcassets */; };
 		98B5DD54244B342300C74586 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98B5DD53244B342300C74586 /* Preview Assets.xcassets */; };
 		98B5DD57244B342300C74586 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98B5DD55244B342300C74586 /* LaunchScreen.storyboard */; };
 		98B5DD62244B342300C74586 /* AzanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5DD61244B342300C74586 /* AzanTests.swift */; };
 		98B5DD6D244B4E7C00C74586 /* LocationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5DD6C244B4E7C00C74586 /* LocationWorker.swift */; };
-		98B5DD6F244B557F00C74586 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5DD6E244B557F00C74586 /* ContentViewModel.swift */; };
+		98B5DD6F244B557F00C74586 /* TodayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B5DD6E244B557F00C74586 /* TodayViewModel.swift */; };
 		98BB0AAE244C146F0091F0CF /* SolatWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BB0AAD244C146F0091F0CF /* SolatWorker.swift */; };
 		98BB0AB0244C33A40091F0CF /* SolatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BB0AAF244C33A40091F0CF /* SolatView.swift */; };
 		98DBB18624718EAB00E150F6 /* LocationPermissionScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DBB18524718EAB00E150F6 /* LocationPermissionScene.swift */; };
+		98DBB188247198DF00E150F6 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DBB187247198DF00E150F6 /* AnimationView.swift */; };
+		98DBB18A24719E6700E150F6 /* 10581-location.json in Resources */ = {isa = PBXBuildFile; fileRef = 98DBB18924719E6700E150F6 /* 10581-location.json */; };
 		98F866AE2472E58400780DB9 /* LocationManagerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F866AD2472E58400780DB9 /* LocationManagerPublisher.swift */; };
 		98F866B12472E5FA00780DB9 /* ParentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F866B02472E5FA00780DB9 /* ParentScene.swift */; };
 		98F866B52472E61500780DB9 /* ParentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F866B42472E61500780DB9 /* ParentViewModel.swift */; };
-		98DBB188247198DF00E150F6 /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DBB187247198DF00E150F6 /* AnimationView.swift */; };
-		98DBB18A24719E6700E150F6 /* 10581-location.json in Resources */ = {isa = PBXBuildFile; fileRef = 98DBB18924719E6700E150F6 /* 10581-location.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,7 @@
 		98B5DD47244B342100C74586 /* Azan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Azan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98B5DD4A244B342100C74586 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98B5DD4C244B342100C74586 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		98B5DD4E244B342100C74586 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		98B5DD4E244B342100C74586 /* TodayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayScene.swift; sourceTree = "<group>"; };
 		98B5DD50244B342300C74586 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98B5DD53244B342300C74586 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		98B5DD56244B342300C74586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,15 +62,15 @@
 		98B5DD61244B342300C74586 /* AzanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AzanTests.swift; sourceTree = "<group>"; };
 		98B5DD63244B342300C74586 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98B5DD6C244B4E7C00C74586 /* LocationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWorker.swift; sourceTree = "<group>"; };
-		98B5DD6E244B557F00C74586 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		98B5DD6E244B557F00C74586 /* TodayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewModel.swift; sourceTree = "<group>"; };
 		98BB0AAD244C146F0091F0CF /* SolatWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolatWorker.swift; sourceTree = "<group>"; };
 		98BB0AAF244C33A40091F0CF /* SolatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolatView.swift; sourceTree = "<group>"; };
 		98DBB18524718EAB00E150F6 /* LocationPermissionScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionScene.swift; sourceTree = "<group>"; };
+		98DBB187247198DF00E150F6 /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+		98DBB18924719E6700E150F6 /* 10581-location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "10581-location.json"; sourceTree = "<group>"; };
 		98F866AD2472E58400780DB9 /* LocationManagerPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerPublisher.swift; sourceTree = "<group>"; };
 		98F866B02472E5FA00780DB9 /* ParentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentScene.swift; sourceTree = "<group>"; };
 		98F866B42472E61500780DB9 /* ParentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewModel.swift; sourceTree = "<group>"; };
-		98DBB187247198DF00E150F6 /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
-		98DBB18924719E6700E150F6 /* 10581-location.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "10581-location.json"; sourceTree = "<group>"; };
 		A0E13C8CA8053EE9991DC6CB /* Pods-AzanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AzanTests.release.xcconfig"; path = "Target Support Files/Pods-AzanTests/Pods-AzanTests.release.xcconfig"; sourceTree = "<group>"; };
 		D045BE846BE5EC20258B1C31 /* Pods-Azan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Azan.debug.xcconfig"; path = "Target Support Files/Pods-Azan/Pods-Azan.debug.xcconfig"; sourceTree = "<group>"; };
 		D9D53C2121C8AEBC8FE594EB /* Pods_Azan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Azan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,8 +186,8 @@
 		98B5DD70244B559800C74586 /* Content View */ = {
 			isa = PBXGroup;
 			children = (
-				98B5DD6E244B557F00C74586 /* ContentViewModel.swift */,
-				98B5DD4E244B342100C74586 /* ContentView.swift */,
+				98B5DD6E244B557F00C74586 /* TodayViewModel.swift */,
+				98B5DD4E244B342100C74586 /* TodayScene.swift */,
 			);
 			path = "Content View";
 			sourceTree = "<group>";
@@ -403,9 +403,9 @@
 				98733F6624691F4400B35C83 /* HeaderView.swift in Sources */,
 				98DBB18624718EAB00E150F6 /* LocationPermissionScene.swift in Sources */,
 				98BB0AAE244C146F0091F0CF /* SolatWorker.swift in Sources */,
-				98B5DD4F244B342100C74586 /* ContentView.swift in Sources */,
+				98B5DD4F244B342100C74586 /* TodayScene.swift in Sources */,
 				98F866B52472E61500780DB9 /* ParentViewModel.swift in Sources */,
-				98B5DD6F244B557F00C74586 /* ContentViewModel.swift in Sources */,
+				98B5DD6F244B557F00C74586 /* TodayViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
