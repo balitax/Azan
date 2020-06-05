@@ -3,6 +3,7 @@ import SwiftUI
 struct TodayScene: View {
 
     @ObservedObject private var viewModel: TodayViewModel
+    @EnvironmentObject private var settings: Settings
 
     @State var nextPrayer: String = ""
     @State var currentTime: String = ""
@@ -10,7 +11,7 @@ struct TodayScene: View {
 
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
-    init(viewModel: TodayViewModel = TodayViewModel()) {
+    init(viewModel: TodayViewModel) {
         self.viewModel = viewModel
     }
 
@@ -62,7 +63,10 @@ struct TodayScene: View {
                         .foregroundColor(.primary)
                         .padding(.leading, -15)
                         .padding(.bottom, 5)
-                    ) {
+                    , footer:
+                    Text("\(settings.calculationMethod.label)")
+                        .font(.footnote)
+                ) {
                     SolatView(title: "Subuh", time: viewModel.fajr, icon: "sunrise.fill")
                     SolatView(title: "Zuhur", time: viewModel.dhuhr, icon: "sun.max.fill")
                     SolatView(title: "Asar", time: viewModel.asr, icon: "sun.min.fill")
@@ -70,6 +74,9 @@ struct TodayScene: View {
                     SolatView(title: "Isyak", time: viewModel.isha, icon: "moon.stars.fill")
                 }
             }.listStyle(GroupedListStyle()).environment(\.horizontalSizeClass, .regular)
+            .onReceive(settings.objectWillChange, perform: { _ in
+                self.viewModel.refreshPrayerTimes()
+            })
             .navigationBarTitle("Today")
                 .navigationBarItems(trailing:
                     Button(action: {
@@ -80,6 +87,7 @@ struct TodayScene: View {
                     })
                     .sheet(isPresented: $isSettingsPresented) {
                         SettingsView()
+                            .environmentObject(self.settings)
                     }
             )
         }
@@ -88,6 +96,6 @@ struct TodayScene: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TodayScene()
+        TodayScene(viewModel: TodayViewModel(calculationMethod: .muslimWorldLeague))
     }
 }

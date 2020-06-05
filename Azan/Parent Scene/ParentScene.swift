@@ -4,6 +4,7 @@ import SwiftUI
 struct ParentScene: View {
 
     @ObservedObject private var viewModel: ParentViewModel
+    @EnvironmentObject private var settings: Settings
 
     init(viewModel: ParentViewModel = ParentViewModel()) {
         self.viewModel = viewModel
@@ -12,7 +13,7 @@ struct ParentScene: View {
     var body: some View {
         VStack {
             if viewModel.isLocationEnabled {
-                TodayScene()
+                TodayScene(viewModel: TodayViewModel(calculationMethod: settings.calculationMethod))
             } else {
                 LocationPermissionScene()
             }

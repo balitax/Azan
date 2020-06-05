@@ -1,14 +1,21 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @EnvironmentObject private var settings: Settings
+
     var body: some View {
         NavigationView {
             List {
                 Section(header: HeaderView("General")) {
                     NavigationLink(destination: CalculationMethodView()) {
-                        Text("Prayer Calculation Method")
-                        .fontWeight(.medium)
-                        .padding()
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Prayer Calculation Method")
+                                .fontWeight(.semibold)
+                            Text(settings.calculationMethod.label)
+                                .fontWeight(.medium)
+                                .foregroundColor(.secondary)
+                        }
+                        .padding(.vertical)
                     }
                     NavigationLink(destination: EmptyView()) {
                         Text("Language")
