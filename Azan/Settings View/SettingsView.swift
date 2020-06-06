@@ -17,10 +17,14 @@ struct SettingsView: View {
                         }
                         .padding(.vertical)
                     }
-                    NavigationLink(destination: EmptyView()) {
-                        Text("Language")
-                        .fontWeight(.medium)
-                        .padding()
+                    NavigationLink(destination: MadhabScene()) {
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("Madhab")
+                                .fontWeight(.semibold)
+                            Text(settings.madhab.label)
+                                .fontWeight(.medium)
+                                .foregroundColor(.secondary)
+                        }
                     }
                     NavigationLink(destination: EmptyView()) {
                         Text("Location")

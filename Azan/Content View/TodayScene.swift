@@ -96,6 +96,6 @@ struct TodayScene: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TodayScene(viewModel: TodayViewModel(calculationMethod: .muslimWorldLeague))
+        TodayScene(viewModel: TodayViewModel(calculationMethod: .muslimWorldLeague, madhab: .shafi))
     }
 }
