@@ -52,7 +52,7 @@ class SolatWorker {
         let cal = Calendar(identifier: Calendar.Identifier.gregorian)
         let dateComponents = cal.dateComponents([.year, .month, .day], from: date)
         var params = self.calculationMethod.adhanCalculationMethod.params
-        params.madhab = .shafi
+        params.madhab = self.madhab.adhanMadhab
         self.prayerTimes = PrayerTimes(coordinates: coordinates, date: dateComponents, calculationParameters: params)
         guard let next = self.prayerTimes?.nextPrayer() else { return }
         self.countdownForNextPrayer = prayerTimes?.time(for: next)
