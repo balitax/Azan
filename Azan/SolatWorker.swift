@@ -15,6 +15,8 @@ class SolatWorker {
 
     private let calculationMethod: SolatCalculationMethod
 
+    private let madhab: SolatMadhab
+
     var fajrTime: Date? {
         return prayerTimes?.fajr
     }
@@ -41,8 +43,11 @@ class SolatWorker {
 
     var countdownForNextPrayer: Date?
 
-    init(calculationMethod: SolatCalculationMethod, latitude: Double, longitude: Double, date: Date) {
+    init(calculationMethod: SolatCalculationMethod,
+         madhab: SolatMadhab,
+         latitude: Double, longitude: Double, date: Date) {
         self.calculationMethod = calculationMethod
+        self.madhab = madhab
         let coordinates = Coordinates(latitude: latitude, longitude: longitude)
         let cal = Calendar(identifier: Calendar.Identifier.gregorian)
         let dateComponents = cal.dateComponents([.year, .month, .day], from: date)

@@ -63,12 +63,15 @@ class TodayViewModel: ObservableObject {
 
     private let currentDate: Date
     private let calculationMethod: SolatCalculationMethod
+    private let madhab: SolatMadhab
 
     // MARK: - Inits
 
     init(currentDate: Date = Date(),
-         calculationMethod: SolatCalculationMethod) {
+         calculationMethod: SolatCalculationMethod,
+         madhab: SolatMadhab) {
         self.calculationMethod = calculationMethod
+        self.madhab = madhab
         self.currentDate = currentDate
         self.locationWorker = LocationWorker()
         locationWorker.subject.sink(receiveCompletion: { completion in
@@ -111,7 +114,10 @@ class TodayViewModel: ObservableObject {
             return
         }
 
-        self.solatWorker = SolatWorker(calculationMethod: self.calculationMethod, latitude: latitude, longitude: longitude, date: Date())
+        self.solatWorker = SolatWorker(
+            calculationMethod: self.calculationMethod,
+           madhab: self.madhab,
+           latitude: latitude, longitude: longitude, date: Date())
         self.fajr = self.convert(date: self.solatWorker?.fajrTime)
         self.dhuhr = self.convert(date: self.solatWorker?.zuhrTime)
         self.asr = self.convert(date: self.solatWorker?.asrTime)
