@@ -25,6 +25,9 @@ class TodayViewModel: ObservableObject {
         }
     }
 
+    private var latitude: CLLocationDegrees?
+    private var longitude: CLLocationDegrees?
+
     @Published private(set) var locality: String = ""
     @Published private(set) var fajr: String = ""
     @Published private(set) var dhuhr: String = ""
@@ -59,10 +62,13 @@ class TodayViewModel: ObservableObject {
     var subscriptions = Set<AnyCancellable>()
 
     private let currentDate: Date
+    private let calculationMethod: SolatCalculationMethod
 
     // MARK: - Inits
 
-    init(currentDate: Date = Date()) {
+    init(currentDate: Date = Date(),
+         calculationMethod: SolatCalculationMethod) {
+        self.calculationMethod = calculationMethod
         self.currentDate = currentDate
         self.locationWorker = LocationWorker()
         locationWorker.subject.sink(receiveCompletion: { completion in
@@ -75,16 +81,15 @@ class TodayViewModel: ObservableObject {
         }, receiveValue: { locations in
             for location in locations {
                 self.geocode(location: location)
-                let latitude = location.coordinate.latitude
-                let longitude = location.coordinate.longitude
-                self.solatWorker = SolatWorker(latitude: latitude, longitude: longitude, date: Date())
-                self.fajr = self.convert(date: self.solatWorker?.fajrTime)
-                self.dhuhr = self.convert(date: self.solatWorker?.zuhrTime)
-                self.asr = self.convert(date: self.solatWorker?.asrTime)
-                self.maghrib = self.convert(date: self.solatWorker?.maghribTime)
-                self.isha = self.convert(date: self.solatWorker?.ishaTime)
+                self.latitude = location.coordinate.latitude
+                self.longitude = location.coordinate.longitude
+                self.updatePrayerTimes(latitude: self.latitude, longitude: self.longitude)
             }
         }).store(in: &subscriptions)
+    }
+
+    func refreshPrayerTimes() {
+        updatePrayerTimes(latitude: self.latitude, longitude: self.longitude)
     }
 
     private func geocode(location: CLLocation) {
@@ -98,6 +103,20 @@ class TodayViewModel: ObservableObject {
     private func convert(date: Date?) -> String {
         guard let date = date else { return "" }
         return timeFormatter.string(from: date)
+    }
+
+    private func updatePrayerTimes(latitude: CLLocationDegrees?, longitude: CLLocationDegrees?) {
+        guard let latitude = latitude,
+            let longitude = longitude else {
+            return
+        }
+
+        self.solatWorker = SolatWorker(calculationMethod: self.calculationMethod, latitude: latitude, longitude: longitude, date: Date())
+        self.fajr = self.convert(date: self.solatWorker?.fajrTime)
+        self.dhuhr = self.convert(date: self.solatWorker?.zuhrTime)
+        self.asr = self.convert(date: self.solatWorker?.asrTime)
+        self.maghrib = self.convert(date: self.solatWorker?.maghribTime)
+        self.isha = self.convert(date: self.solatWorker?.ishaTime)
     }
 }
 

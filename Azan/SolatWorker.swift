@@ -13,6 +13,8 @@ class SolatWorker {
 
     private let prayerTimes: PrayerTimes?
 
+    private let calculationMethod: SolatCalculationMethod
+
     var fajrTime: Date? {
         return prayerTimes?.fajr
     }
@@ -39,11 +41,12 @@ class SolatWorker {
 
     var countdownForNextPrayer: Date?
 
-    init(latitude: Double, longitude: Double, date: Date) {
+    init(calculationMethod: SolatCalculationMethod, latitude: Double, longitude: Double, date: Date) {
+        self.calculationMethod = calculationMethod
         let coordinates = Coordinates(latitude: latitude, longitude: longitude)
         let cal = Calendar(identifier: Calendar.Identifier.gregorian)
         let dateComponents = cal.dateComponents([.year, .month, .day], from: date)
-        var params = Adhan.CalculationMethod.moonsightingCommittee.params
+        var params = self.calculationMethod.adhanCalculationMethod.params
         params.madhab = .shafi
         self.prayerTimes = PrayerTimes(coordinates: coordinates, date: dateComponents, calculationParameters: params)
         guard let next = self.prayerTimes?.nextPrayer() else { return }
