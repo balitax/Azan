@@ -41,9 +41,9 @@ struct TodayScene: View {
                                 self.nextPrayer = "\(self.viewModel.relativeTimeNextPrayer) left until \(self.viewModel.nextPrayer)"
                         }
                         Text(currentTime)
-                            .font(Font.system(.headline, design: .monospaced).monospacedDigit())
-                            .foregroundColor(.secondary)
+                            .font(Font.headline.monospacedDigit())
                             .fontWeight(.medium)
+                            .foregroundColor(.secondary)
                             .onReceive(timer) { output in
                                 self.currentTime = self.viewModel.currentTime
                         }
@@ -83,10 +83,12 @@ struct TodayScene: View {
                         self.isSettingsPresented = true
                     }, label: {
                         Image(systemName: "slider.horizontal.3")
+                            .imageScale(.large)
+                            .padding()
                             .accentColor(.primary)
                     })
                     .sheet(isPresented: $isSettingsPresented) {
-                        SettingsView()
+                        SettingsView(isPresented: self.$isSettingsPresented)
                             .environmentObject(self.settings)
                     }
             )

@@ -3,6 +3,8 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject private var settings: Settings
 
+    @Binding var isPresented: Bool
+
     var body: some View {
         NavigationView {
             List {
@@ -52,13 +54,21 @@ struct SettingsView: View {
             }
             .listStyle(GroupedListStyle())
             .environment(\.horizontalSizeClass, .regular)
-            .navigationBarTitle("Settings")
+            .navigationBarItems(leading: Button(action: {
+                self.isPresented = false
+            }, label: {
+                Image(systemName: "xmark")
+                    .imageScale(.large)
+                    .padding()
+                    .accentColor(.primary)
+            }))
+            .navigationBarTitle("Settings", displayMode: .inline)
         }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(isPresented: .constant(true))
     }
 }
